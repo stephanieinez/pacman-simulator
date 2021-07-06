@@ -2,7 +2,7 @@
 
 This application is a simulation of Pacman moving on a 5 x 5 grid. Pacman is free to roam around the grid, but is constrained to the parameters of the grid.
 
-This project is built with [React](https://reactjs.org/) and uses [Styled Components](https://styled-components.com/). I chose this approach as I think it gives a good indication of what I see as the day to day tasks of a Frontend Developer within IE.
+This project is built with [React](https://reactjs.org/) and uses [Styled Components](https://styled-components.com/). I chose this approach as I think it gives a good indication of what I see as the day to day tasks of a Frontend Developer.
 
 ## How to use
 
