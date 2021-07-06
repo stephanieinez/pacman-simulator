@@ -26,8 +26,10 @@ const Square = styled.div`
   }
 `;
 
-// renders the 2-dimentional gridArray and places Pacman on the grid
-// depending on their current X and Y coordinates
+/**
+ * renders the 2-dimentional gridArray and places Pacman on the grid
+ * depending on their current X and Y coordinates
+ */
 export function Grid() {
   const { gridArray, xCoordinate, yCoordinate } = useContext(CoordinateContext);
 

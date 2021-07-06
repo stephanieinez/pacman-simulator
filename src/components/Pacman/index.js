@@ -13,7 +13,9 @@ const eat = keyframes`
   }
 `;
 
-// creates an animated Pacman who faces the direction of the props provided
+/**
+ * creates an animated Pacman who faces the direction of the props provided
+ */
 const PacmanImage = styled.div`
   width: 1px;
   height: 1px;

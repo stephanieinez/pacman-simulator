@@ -8,8 +8,10 @@ const Wrapper = styled.div`
   font-weight: 600;
 `;
 
-// creates an output component which reflects Pacman's current
-// X, Y and facing direction
+/**
+ * creates an output component which reflects Pacman's current
+ * X, Y and facing direction
+ */
 export function Output() {
   const { xCoordinate, yCoordinate, fCoordinate } =
     useContext(CoordinateContext);

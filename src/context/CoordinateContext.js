@@ -3,7 +3,9 @@ import { directions } from "../constants/directions";
 
 export const CoordinateContext = createContext();
 
-// initalises 5x5 2-dimenstional array
+/**
+ * initalises 5x5 2-dimenstional array
+ */
 const gridArray = new Array(5)
   .fill()
   .map(() => new Array(5).fill().map(() => null));
@@ -13,9 +15,11 @@ export function CoordinateProvider({ children }) {
   const [yCoordinate, setYCoordinate] = useState(0);
   const [fCoordinate, setFCoordinate] = useState(directions.NORTH);
 
-  // establishes the grid boundry and sets new position of Pacman depending on the
-  // direction they are facing
-  const moveFunction = () => {
+  /**
+   * establishes the grid boundry and sets new position of Pacman depending on the
+   * direction they are facing
+   */
+  const move = () => {
     const withinGrid = (val) => {
       if (val <= 0) {
         return 0;
@@ -46,9 +50,11 @@ export function CoordinateProvider({ children }) {
     }
   };
 
-  // checks for the direction Pacman is currently facing, then shifts their
-  // position 90 degrees left or right
-  const directionFunction = (direction) => () => {
+  /**
+   * checks for the direction Pacman is currently facing, then shifts their
+   * position 90 degrees left or right
+   */
+  const setDirection = (direction) => () => {
     const isRight = direction === "right";
 
     switch (fCoordinate) {
@@ -79,8 +85,8 @@ export function CoordinateProvider({ children }) {
         setXCoordinate,
         setYCoordinate,
         setFCoordinate,
-        moveFunction,
-        directionFunction,
+        move,
+        setDirection,
       }}
     >
       {children}

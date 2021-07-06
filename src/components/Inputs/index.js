@@ -69,16 +69,13 @@ const SelectInput = ({ name, labelText, handleChange, values }) => (
   </InputWrapper>
 );
 
-// renders three select inputs to set the inital coordinates of Pacman,
-// and three buttons to move and change the direction of Pacman
+/**
+ * renders three select inputs to set the inital coordinates of Pacman,
+ * and three buttons to move and change the direction of Pacman
+ */
 export function Inputs() {
-  const {
-    moveFunction,
-    directionFunction,
-    setXCoordinate,
-    setYCoordinate,
-    setFCoordinate,
-  } = useContext(CoordinateContext);
+  const { move, setDirection, setXCoordinate, setYCoordinate, setFCoordinate } =
+    useContext(CoordinateContext);
 
   // sets Pacman's inital position
   const handleXChange = (event) => setXCoordinate(parseInt(event.target.value));
@@ -115,13 +112,13 @@ export function Inputs() {
       </Wrapper>
       <ButtonWrapper>
         <Text>Move</Text>
-        <Button onClick={moveFunction} data-testid="move-button">
+        <Button onClick={move} data-testid="move-button">
           Move
         </Button>
-        <Button onClick={directionFunction("left")} data-testid="left-button">
+        <Button onClick={setDirection("left")} data-testid="left-button">
           Left
         </Button>
-        <Button onClick={directionFunction("right")} data-testid="right-button">
+        <Button onClick={setDirection("right")} data-testid="right-button">
           Right
         </Button>
       </ButtonWrapper>
